@@ -39,6 +39,7 @@ public class Main {
 
     private static ActivationGroup createActivationGroup() throws ActivationException, RemoteException {
         Properties prop = new Properties();
+        // これいらないかも...どうせ java の引き数で policy 指定すんでしょ
         prop.put("java.security.policy", "/Users/atsushi/java.policy");
         
         ActivationGroupDesc.CommandEnvironment configInfo = null;
@@ -50,6 +51,7 @@ public class Main {
     }
 
     private static void createRmiObj() throws ActivationException, UnknownGroupException, RemoteException, AlreadyBoundException, MalformedURLException {
+        // 第二引き数意味アンのかなぁ...どうせ java の引き数で codebase 指定すんでしょ。　ひょっとして第二引き数の意味を間違って解釈している?
         ActivationDesc ad = new ActivationDesc(
                 RmiObjImpl.class.getName(),
                 "file:///Users/atsushi/NetBeansProjects/RmiExam/target/RmiExam-1.0-SNAPSHOT.jar",
