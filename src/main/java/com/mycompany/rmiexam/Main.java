@@ -29,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // この JVM の activationGroup を作る
-            // できるのはこのグループで動く RMI アプリケーションの停止だけ
+            // activationGroup オブジェクトが返ってくるけど、ここからできるのは、このグループで動く RMI アプリケーションの停止だけ
             ActivationGroup activationGroup = createActivationGroup();
             createRmiObj();            
         } catch (ActivationException | RemoteException | AlreadyBoundException | MalformedURLException ex) {
